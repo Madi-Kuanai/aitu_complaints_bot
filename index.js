@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const token = "7646707882:AAGCAzD7aZci8sjv2UibrlckbG5pFeQDpsI";
 const bot = new TelegramBot(token, {polling: true});
-const url = "https://aitu-complaints.netlify.app/complaints";
+const url = "https://aitu-complaints.netlify.app";
 const id = {
     moderation: -4659604334, channel: -1002296112753
 }
@@ -44,7 +44,7 @@ bot.on("message", async (msg) => {
         await bot.sendMessage(chatId, "Здравствуйте! Я ваш комплаенс-бот АИТУ.\n" +
             "Моя цель — помочь вам решить проблемы и ответить на вопросы. Запустите приложение", {
             reply_markup: {
-                inline_keyboard: [[{text: "Открыть", web_app: {url: "https://aitu-complaints.netlify.app"}}]]
+                inline_keyboard: [[{text: "Открыть", web_app: {url: url}}]]
             }
         })
     }
