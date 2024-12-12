@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const token = "7646707882:AAGCAzD7aZci8sjv2UibrlckbG5pFeQDpsI";
 const bot = new TelegramBot(token, {polling: true});
-const url = "https://aitu-complaints.netlify.app/"
+const url = "https://aitu-complaints.netlify.app/complaints";
 const id = {
     moderation: -4659604334, channel: -1002296112753
 }
