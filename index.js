@@ -1,9 +1,8 @@
-import TelegramBot from 'node-telegram-bot-api';
-import express from 'express';
-import cors from 'cors';
+const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+const cors = require('cors');
 
-require('dotenv').config();
-const token = process.env.TOKEN;
+const token = "7646707882:AAGCAzD7aZci8sjv2UibrlckbG5pFeQDpsI";
 const bot = new TelegramBot(token, {polling: true});
 const url = "https://aitu-complaints.netlify.app/"
 const id = {
