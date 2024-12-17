@@ -41,7 +41,7 @@ bot.on("message", async (msg) => {
         return;
     }
     if (text === "/start") {
-        await bot.sendMessage(chatId, "Здравствуйте! Я ваш комплаенс-бот АИТУ.\n" +
+        await bot.sendMessage(chatId, "Здравствуйте! Я ваш AITU-Complaints Bot.\n" +
             "Моя цель — помочь вам решить проблемы и ответить на вопросы. Запустите приложение", {
             reply_markup: {
                 inline_keyboard: [[{text: "Открыть", web_app: {url: url}}]]
