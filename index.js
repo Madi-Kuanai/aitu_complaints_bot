@@ -56,7 +56,7 @@ bot.on('callback_query', async (callbackQuery) => {
 
         if (callbackData === 'yes') {
             await bot.sendMessage(id.moderation, 'Опубликовано ✅');
-            await bot.sendMessage(id.channel, `${callbackMsg?.text}`);
+            await bot.sendMessage(id.channel, `${callbackMsg?.text}`, {});
             if (callbackMsg?.message_id) {
                 await bot.editMessageReplyMarkup({inline_keyboard: []}, {
                     chat_id: id.moderation, message_id: callbackMsg.message_id
@@ -83,11 +83,13 @@ app.post('/complaints', async (req, res) => {
     const text = req.body.result.input_message_content.message_text;
 
     try {
-        await bot.sendMessage(id.moderation, `${text}`, {
-            reply_markup: {
-                inline_keyboard: [[{text: '✅', callback_data: 'yes'}, {text: '❌', callback_data: 'no'}]]
-            }
-        });
+        await bot.sendMessage(id.moderation, `${text}`,
+        //     {
+        //     reply_markup: {
+        //         inline_keyboard: [[{text: '✅', callback_data: 'yes'}, {text: '❌', callback_data: 'no'}]]
+        //     }
+        // }
+        );
         res.json({success: true});
     } catch (error) {
         console.error("Error sending message to chat:", error);
