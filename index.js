@@ -81,9 +81,10 @@ bot.on('callback_query', async (callbackQuery) => {
 
 app.post('/complaints', async (req, res) => {
     const text = req.body.result.input_message_content.message_text;
-    const type = req.body.result.title;
+    const type = req.body.result.title.text;
+    console.log("Type: " * type)
     try {
-        await bot.sendMessage(id.moderation, `<b>Категория: ${type}</b>\nОписание:${text}`,);
+        await bot.sendMessage(id.moderation, `*Категория:* ${type}\n*Описание:* ${text}`,);
         res.json({success: true});
     } catch (error) {
         console.error("Error sending message to chat:", error);
