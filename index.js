@@ -81,7 +81,7 @@ bot.on('callback_query', async (callbackQuery) => {
 
 app.post('/complaints', async (req, res) => {
     const text = req.body.result.input_message_content.message_text;
-    const type = req.body.result.title.toJSON().toString();
+    const type = req.body.result.title;
     console.log("Type: " + type)
     try {
         await bot.sendMessage(id.moderation, `<b>Категория:</b> ${type}\n<b>Описание:</b> ${text}`, {
