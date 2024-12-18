@@ -84,7 +84,9 @@ app.post('/complaints', async (req, res) => {
     const type = req.body.result.title.text;
     console.log("Type: " * type)
     try {
-        await bot.sendMessage(id.moderation, `*Категория:* ${type}\n*Описание:* ${text}`,);
+        await bot.sendMessage(id.moderation, `<b>Категория:</b> ${type}\n<b>Описание:</b> ${text}`, {
+            parse_mode: "HTML",
+        });
         res.json({success: true});
     } catch (error) {
         console.error("Error sending message to chat:", error);
